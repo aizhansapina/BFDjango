@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table class="table">
+    <tr>
+        <td>{{Task}}</td>
+        <td>{{Created}}</td>
+        <td>{{Due}}</td>
+        <td>{{Owner}}</td>
+        <td><button class="button_done">{{Mark}}</button></td>
+    </tr>
+    </table>
+{% endblock %}
