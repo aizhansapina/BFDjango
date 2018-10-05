@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <table class = "table">
+    {% for task in Tasks %}
+        <tr>
+            <td><a href = "{% url 'task_detail' task.id %}">{{task.task_name}}</a></td>
+            <td>{{task.created}}</td>
+            <td>{{task.due}}</td>
+            <td>{{task.owner}}</td>
+            <td><button class="button_done">{{task.mark}}</button></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,45 @@
+body{
+    margin-left: 150px;
+}
+
+.button_add{
+    background-color: dodgerblue;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.button_view{
+    background-color: darkorange;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    margin-left: 50px;
+    height: 30px;
+}
+
+.button_delete{
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    color: black;
+    height: 30px;
+}
+
+.table{
+    margin-left: 50px;
+    font-size: larger;
+}
+
+.button_done{
+    background-color: lightseagreen;
+    color: white;
+    font-size: 15px;
+    height: 30px;
+    border-radius: 4px;
+    border: none;
+}

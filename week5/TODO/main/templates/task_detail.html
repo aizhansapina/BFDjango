@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task detail</title>
+</head>
+<body>
+    <form action="{% url 'task_detail' task.id %}" method="POST">
+        {% csrf_token %}
+        <div>Task id: {{ task.id }}</div>
+        <div>Task name: {{ task.task_name }}</div>
+        <div>Task created: {{ task.created }}</div>
+        <div>Task due: {{ task.due }}</div>
+        <div>Task owner: {{ task.owner }}</div>
+        <div>Task mark: {{ task.mark }}</div>
+        <button type = "submit">Delete this task</button>
+    </form>
+</body>
