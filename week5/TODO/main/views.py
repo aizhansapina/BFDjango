@@ -67,8 +67,8 @@ def task_detail(request , task_id):
     return render(request, 'task_detail.html', context)
 
 
-def delete_all(request):
-    Task.objects.all().delete()
-    #context = {}
-    #return render(request, 'todo_list.html', context)
-    return redirect('all')
+# def delete_all(request):
+#     Task.objects.all().delete()
+#     #context = {}
+#     #return render(request, 'todo_list.html', context)
+#     return redirect('all')
