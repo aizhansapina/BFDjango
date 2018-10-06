@@ -30,13 +30,28 @@
     {% block body %}
     {% endblock %}
 </table>
-<a class = "button_view" href = "{% url 'completed' %}">
-    {% if is_completed %}
+{#<a class = "button_view" href = "{% url 'completed' %}">#}
+{#    {% if is_completed %}#}
+{#        View incompleted tasks#}
+{#    {% else %}#}
+{#        View completed tasks#}
+{#    {% endif %}#}
+{#</a>#}
+<form action = "{% url 'completed' %}">
+    {% csrf_token %}
+    <button type = "submit" class = "button_view">
+        {% if is_completed %}
         View incompleted tasks
-    {% else %}
+        {% else %}
         View completed tasks
-    {% endif %}
-</a>
-<button class = "button_delete">Delete this list</button>
+        {% endif %}
+    </button>
+</form>
+{#<a class = "button_delete" href = "{% url 'all' %}" method = "POST">Delete this list</a>#}
+
+<form action = "{% url 'all' %}" method="post">
+    {% csrf_token %}
+    <button type = "submit" class = "button_delete">Delete this list</button>
+</form>
 </body>
 </html>

@@ -7,10 +7,14 @@ from django.http import Http404
 # Create your views here.
 
 def all_tasks(request):
-    todo_task = Task.objects.all()
-    context = {
-        'Tasks' : todo_task
-    }
+    if request.method == "POST":
+        Task.objects.all().delete()
+        return redirect('all')
+    else:
+        todo_task = Task.objects.all()
+        context = {
+            'Tasks' : todo_task
+        }
     return render(request, 'todo_list.html', context)
 
 def completed_tasks(request):
@@ -61,3 +65,10 @@ def task_detail(request , task_id):
         'task': task
     }
     return render(request, 'task_detail.html', context)
+
+
+def delete_all(request):
+    Task.objects.all().delete()
+    #context = {}
+    #return render(request, 'todo_list.html', context)
+    return redirect('all')
