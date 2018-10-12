@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/completed_todo_list-style.css' %}">
+    <title>Completed tasks</title>
+</head>
+<body class = "page">
+<header class = "header">
+    BFDjango TODO
+</header>
+    {% block content %}
+    <div class = "page__content-wrapper content-wrapper">
+    <button type="button" class="add add--style content-wrapper__add">Add task</button>
+    <h2>Completed tasks in "List 1"</h2>
+
+
+    <ul class="content">
+        <li class="content__item">
+            <div class="col">Task</div>
+            <div class="col">Created</div>
+            <div class="col">Due on</div>
+            <div class="col">Owner</div>
+            <div class="col">Mark</div>
+        </li>
+
+        {% for task in tasks %}
+
+            <li class="content__item">
+                <a href="#">Task {{task.id}}</a>
+                <div>{{task.create_date}}</div>
+                <div>{{task.due_date}}</div>
+                <div>{{task.owner}}</div>
+                <button type="button" class="done">
+                    {% if task.done_status %}
+                        Done
+                    {% else %}
+                        Not done
+                    {% endif %}
+                </button>
+            </li>
+
+        {% endfor %}
+
+
+    </ul>
+    <button class = "view">View completed tasks</button>
+    <button class = "delete">Delete this list</button>
+    </div>
+
+
+
+{% endblock %}
+</body>
+</html>

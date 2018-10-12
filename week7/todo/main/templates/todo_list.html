@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+
+{% block content %}
+    <div class = "page__content-wrapper content-wrapper">
+    <a type="button" class="add add--style content-wrapper__add" href = "{% url 'new_task' %}">Add task</a>
+    <h2>Tasks in "List 1"</h2>
+
+
+    <ul class="content">
+        <li class="content__item">
+            <div class="col">Task</div>
+            <div class="col">Created</div>
+            <div class="col">Due on</div>
+            <div class="col">Owner</div>
+            <div class="col">Mark</div>
+        </li>
+
+        {% for task in tasks %}
+
+            <li class="content__item">
+                <a href="{% url 'task_page' task.id %}" >Task {{task.id}}</a>
+                <div>{{task.create_date}}</div>
+                <div>{{task.due_date}}</div>
+                <div>{{task.owner}}</div>
+                <button type="button" class="done">
+                    {% if task.done_status %}
+                        Done
+                    {% else %}
+                        Not done
+                    {% endif %}
+                </button>
+            </li>
+
+        {% endfor %}
+
+
+    </ul>
+    <a class = "view" href = "{% url 'completed_tasks' %}">View completed tasks</a>
+    <button class = "delete">Delete this list</button>
+    </div>
+
+
+
+{% endblock %}
+</body>
+</html>

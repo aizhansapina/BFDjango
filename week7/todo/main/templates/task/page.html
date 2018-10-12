@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/task_page-style.css'%}">
+
+    <title>Todo</title>
+</head>
+<body class = "page">
+<header class = "header">
+    BFDjango TODO
+</header>
+<main class = "content">
+    Task number: {{task.id}}
+    <br>
+    Create date: {{ task.create_date }}
+    <br>
+    Due date: {{ task.due_date }}
+    <br>
+    Owner: {{ task.owner }}
+    <br>
+    Done status: {{ task.done_status }}
+    <br>
+    <form action="{% url 'task_page' task.id %}" method="POST">
+        {% csrf_token %}
+        <input class = "delete-button" type="submit" value = "Delete this task">
+    </form>
+</main>
+
+</body>
+</html>

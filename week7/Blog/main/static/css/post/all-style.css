@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.list-container {
+    width: 100%;
+}
+
+.post {
+    width: 100%;
+}
+
+.post--style{
+    text-align: center;
+    padding: 30px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+.link--style{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}

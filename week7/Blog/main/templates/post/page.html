@@ -1,0 +1,15 @@
+{#{% extends 'base.html' %}#}
+{% block body %}
+    <p>{{ post }}</p>
+    <p>{{ post.author }}</p>
+    <p>{{ post.create_date }}</p>
+    <p>{{ post.content }}</p>
+    <br>
+    {% for com in comments %}
+        <div style = "border: 1px solid black">
+            {{ com.author }} {{ com.create_date }}
+            <h4>{{ com.text }}</h4>
+        </div>
+    {% endfor %}
+    <a href="../add_comment/{{ post.id }}">Add comment</a>
+{% endblock %}
